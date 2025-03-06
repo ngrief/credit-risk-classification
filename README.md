@@ -3,28 +3,56 @@ Module 20
 
 # Module 12 Report Template
 
-## Overview of the Analysis
+# Credit Risk Classification
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+## Overview
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+This project evaluates the performance of a logistic regression model designed for credit risk classification. The goal is to predict whether a loan is healthy (`0`) or high-risk (`1`) based on several financial indicators.
 
-## Results
+### Features used:
+- Loan size
+- Interest rate
+- Borrower income
+- Debt-to-income ratio
+- Number of accounts
+- Derogatory marks
+- Total debt
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+## Machine Learning Workflow
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+1. **Data Preparation:**
+   - Import dataset
+   - Define features (`X`) and target variable (`y`)
 
-## Summary
+2. **Train-Test Split:**
+   - Training data: 75%
+   - Testing data: 25%
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+3. **Model Training:**
+   - Logistic Regression
 
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+4. **Evaluation:**
+   - Confusion Matrix
+   - Classification Report
 
-If you do not recommend any of the models, please justify your reasoning.
+## Model Performance
+
+| Metric                              | Score |
+|-------------------------------------|-------|
+| Accuracy                            | 99%   |
+| Precision (Healthy Loans - 0)       | 1.00  |
+| Recall (Healthy Loans - 0)          | 0.99  |
+| Precision (High-Risk Loans - 1)     | 0.85  |
+| Recall (High-Risk Loans - 1)        | 0.91  |
+
+## Conclusions
+
+- **Best Model:** Logistic Regression model achieved high accuracy (99%) with effective identification of high-risk loans (91% recall).
+- **Concern:** Misclassification of 56 high-risk loans as healthy.
+
+## Recommendations
+
+To improve the model further, consider:
+- Handling class imbalance using SMOTE or class weighting
+- Prioritizing accuracy in detecting high-risk loans depending on business objectives.
+
